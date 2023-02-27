@@ -90,15 +90,23 @@ button:focus {
   border-bottom: 1px solid lightgray;
 }
 
+.text-title {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
 .text-snippet {
-  padding-inline: 5px;
-  font-size: 0.8rem;
+  padding-inline: 10px;
+  font-size: 1.2rem;
   font-weight: 400;
-  line-height: 1.2rem;
+  line-height: 1.5rem;
   color: #4A4E74;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  margin-top: 15px;
+  margin-bottom: 15px;
 }
 
 .selected-note {

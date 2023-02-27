@@ -10,7 +10,10 @@ import React from "react"
                 }`}
                 onClick={() => props.setCurrentNoteId(note.id)}
             >
-                <h4 className="text-snippet">Note {index + 1}</h4>
+                <div className="text-title">
+                    <h4 className="text-snippet">Note {index + 1}</h4>
+                    <h5 className="text-snippet">{note.body.split("/n")[0]}</h5>
+                </div>
             </div>
         </div>
     ))
