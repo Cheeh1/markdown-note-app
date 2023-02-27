@@ -30,11 +30,19 @@ import './App.css'
     }
     
     function updateNote(text) {
-        setNotes(oldNotes => oldNotes.map(oldNote => {
-            return oldNote.id === currentNoteId
-                ? { ...oldNote, body: text }
-                : oldNote
-        }))
+        // put the most recent modified note at the top
+        setNotes( oldNotes => {
+            const newArray = []
+            for(let i = 0; i < oldNotes.length; i++) {
+                const oldNote = oldNotes[i]
+                if(oldNote.id === currentNoteId) {
+                    newArray.unshift({ ...oldNote, body: text })
+                } else {
+                    newArray.push(oldNote)
+                }
+            }
+            return newArray
+        })
     }
     
     function findCurrentNote() {
