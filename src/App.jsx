@@ -2,7 +2,7 @@ import React from "react"
 import { useEffect } from "react"
 import Sidebar from "./components/Sidebar"
 import Editor from "./components/Editor"
-// import { data } from "./data"
+import { data } from "./data"
 import Split from "react-split"
 import {nanoid} from "nanoid"
 import './App.css'
@@ -45,6 +45,7 @@ import './App.css'
         })
     }
     
+    // code to delete a note
     function deleteNote(event, noteId) {
         event.stopPropagation()
         setNotes(oldNotes => oldNotes.filter(note => note.id !== noteId))
